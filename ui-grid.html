@@ -1,0 +1,12 @@
+<table class="table">
+    <tr>
+        <th>NOME</th>
+        <th>SOBRENOME</th>
+        <th>DATA NASCIMENTO</th>
+    </tr>
+    <tr ng-repeat="pessoa in listaDePessoas">
+        <td ng-bind="::pessoa.nome | maiusculo"></td>
+        <td ng-bind="::pessoa.sobrenome | maiusculo"></td>
+        <td ng-bind="::pessoa.nascimento | date: 'dd/MM/yyyy'"></td>
+    </tr>
+</table>

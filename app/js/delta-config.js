@@ -1,0 +1,1 @@
+angular.module('delta', ['ngMessages', 'toastr', 'ui.grid']); //declaração do module principal

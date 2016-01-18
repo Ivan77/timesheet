@@ -1,0 +1,20 @@
+/* condição para telas com no máximo 768px */
+@media screen and (max-width: 768px){
+    body{
+        background-color: #00b3ee;
+    }
+}
+
+/* condição para telas entre 768px a 992px */
+@media screen and (min-width: 768px) and (max-width: 992px){
+    body{
+        background-color: #67b168;
+    }
+}
+
+/* condição para telas com no mínimo 992px */
+@media screen and (min-width: 992px){
+    body{
+        background-color: #ebebff;
+    }
+}
