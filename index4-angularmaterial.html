@@ -10,14 +10,26 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
 
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css"/>
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css"/>
+
     <link rel="stylesheet" href="app/css/media-queries.css"/>
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-toastr/src/toastr.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
+
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+
+    <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 
     <script src="app/js/delta-config.js"></script>
     <script src="app/js/controller/index-controller3.js"></script>
+    <script src="app/arquitetura/service/alert-service.js"></script>
+
 </head>
 <body ng-app="delta">
 <!-- ddafdsfsa-->
@@ -31,7 +43,23 @@
                         novalidate>
                     <div class="row">
                         <div class="col-sm-4">
-                            <div class="form-group">
+                            <md-input-container>
+                                <label>Nome</label>
+                                <input type="text" ng-model="entidade.nome" name="nome"
+                                       required
+                                       ng-minlength="3"
+                                       ng-maxlength="20"/>
+                                <div ng-messages="formPessoa.nome.$error">
+                                    <div ng-messages-include="app/template/messages.html"></div>
+                                </div>
+                            </md-input-container>
+
+                            <!--<md-input-container class="md-block" flex-gt-sm>-->
+                                <!--<label>City</label>-->
+                                <!--<input ng-model="user.city">-->
+                            <!--</md-input-container>-->
+
+                            <!--<div class="form-group">
                                 <label for="">Nome</label>
                                 <input type="text"
                                        class="form-control"
@@ -45,11 +73,22 @@
                                     <div ng-message="minlength">Campo muito curto!</div>
                                     <div ng-message="maxlength">Campo muito longo!</div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="col-sm-4">
-                            <div class="form-group">
+
+                            <md-input-container>
+                                <label>Sobrenome</label>
+                                <input type="text" ng-model="entidade.sobrenome" name="sobrenome"
+                                       required
+                                       ng-minlength="3"
+                                       ng-maxlength="20"/>
+                                <div ng-messages="formPessoa.sobrenome.$error">
+                                    <div ng-messages-include="app/template/messages.html"></div>
+                                </div>
+                            </md-input-container>
+                            <!--<div class="form-group">
                                 <label for="">Sobrenome</label>
                                 <input type="text"
                                        class="form-control"
@@ -62,11 +101,19 @@
                                     <div ng-message="minlength">Campo muito curto!</div>
                                     <div ng-message="maxlength">Campo muito longo!</div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="col-sm-4">
-                            <div class="form-group">
+                            <md-datepicker ng-model="entidade.nascimento"
+                                    md-placeholder="Informe a data">
+                                <div ng-messages="formPessoa.nascimento.$error"
+                                        ng-if="formPessoa.nascimento">
+
+                                </div>
+                            </md-datepicker>
+
+                            <!--<div class="form-group">
                                 <label for="">Data Nascimento</label>
                                 <input type="date"
                                        class="form-control"
@@ -77,7 +124,7 @@
                                     <div ng-message="required">Campo Obrigatório!</div>
                                     <div ng-message="date">Data inválida!</div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
 
