@@ -1,4 +1,10 @@
-<div style="width: 200px; height: 200px; background-color: powderblue">
+<div style="width: 200px; height: 200px; background-color: powderblue"
+     ng-controller="PesquisaPessoaController as vm">
     Pesquisa de Pessoa
-    {{nome}}
+    {{vm.nome}}
+
+    <button type="button" class="btn btn-primary"
+            ng-click="vm.redirecionarParaCadastro()">
+        Ir Cadastro
+    </button>
 </div>

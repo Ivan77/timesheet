@@ -20,7 +20,7 @@ function config($stateProvider, $urlRouterProvider){
     };
 
     var cadastroPessoa = {
-        url: "/cadastro-pessoa",
+        url: "/cadastro-pessoa/:id",
         templateUrl: "app/views/pessoa/cadastro-pessoa.html",
         resolve: {
             deps: function($ocLazyLoad){
@@ -45,5 +45,5 @@ function config($stateProvider, $urlRouterProvider){
     $stateProvider.state('cadastroPessoa', cadastroPessoa);
     $stateProvider.state('pesquisaPessoa', pesquisaPessoa);
 
-    $urlRouterProvider.otherwise("/home");
+    //$urlRouterProvider.otherwise("/home");
 }

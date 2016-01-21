@@ -38,30 +38,56 @@
 <body ng-app="delta">
 <!-- ddafdsfsa-->
     <div ng-controller="IndexController3" class="container">
-
         <div>
-            <button type="button"
-                    class="btn btn-default"
+            <ul class="nav nav-pills">
+                <li role="presentation" ng-click="dispararEvento()"><a href="#">Dispara evento</a></li>
+                <li role="presentation"
+                    ng-class="'active':menuSelected=='home'"
                     ui-sref="home">
-                Home
-            </button>
-            <button type="button"
-                    class="btn btn-success"
+                    <a href="#">HOME</a>
+                </li>
+                <li role="presentation"
+                    ng-class="'active':menuSelected=='home'"
                     ui-sref="menu">
-                Menu
-            </button>
+                    <a href="#">Menu</a>
+                </li>
+                <li role="presentation"
+                    ui-sref="cadastroPessoa"
+                    ng-class="'active':menuSelected=='cadastroPessoa'">
+                    <a href="#">Cadastro de Pessoa</a>
+                </li>
+                <li role="presentation" ui-sref="pesquisaPessoa"
+                    ng-class="'active':menuSelected=='pesquisaPessoa'">
+                    <a href="#">Pesquisa de Pessoa</a>
+                </li>
+            </ul>
 
-            <button type="button"
-                    class="btn btn-primary"
-                    ui-sref="cadastroPessoa">
-                Cadastro Pessoa
-            </button>
+            <!--<md-toolbar>-->
+                <!--<div class="md-toolbar-tools">-->
+                    <!--<h3>-->
+                        <!--<md-button ng-click="dispararEvento()">-->
+                            <!--Dispara evento-->
+                        <!--</md-button>-->
 
-            <button type="button"
-                    class="btn btn-warning"
-                    ui-sref="pesquisaPessoa">
-                Pesquisa Pessoa
-            </button>
+                        <!--<md-button ui-sref="home">-->
+                            <!--Home-->
+                        <!--</md-button>-->
+
+                        <!--<md-button ui-sref="menu">-->
+                            <!--Menu-->
+                        <!--</md-button>-->
+
+                        <!--<md-button ui-sref="cadastroPessoa">-->
+                            <!--Cadastro de Pessoa-->
+                        <!--</md-button>-->
+
+                        <!--<md-button ui-sref="pesquisaPessoa">-->
+                            <!--Pesquisa de Pessoa-->
+                        <!--</md-button>-->
+
+                    <!--</h3>-->
+                <!--</div>-->
+            <!--</md-toolbar>-->
         </div>
 
         <div><div ui-view></div></div>
