@@ -2,11 +2,10 @@
     angular.module('delta')
         .controller('PesquisaPessoaController', PesquisaPessoaController);
 
-    PesquisaPessoaController.$inject = ['$scope', '$state', 'AlertService'];
-
+    /* @ngInject */
     function PesquisaPessoaController($scope, $state, AlertService){
         var vm = this; //padrão John Papa
-        vm.nome = "PesquisA de Pessoa Controller123";
+        vm.nome = 'PesquisA de Pessoa Controller123';
         vm.redirecionarParaCadastro = redirecionarParaCadastro;
 
         iniciar();
@@ -26,7 +25,7 @@
         }
 
         function testeBroadcastEvent(event, obj){
-            AlertService.showInfo("Recebeu o evento testeEventoController3 = "+obj.nome);
+            AlertService.showInfo('Recebeu o evento testeEventoController3 = '+obj.nome);
         }
     }
 })();

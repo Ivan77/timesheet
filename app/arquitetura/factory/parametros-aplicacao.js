@@ -1,10 +1,15 @@
-angular.module('delta')
-    .factory('ParametrosAplicacao', ParametrosAplicacao);
+(function(){
+    'use strict';
 
-function ParametrosAplicacao(){
-    return {
-        nomeDoUsuario: '',
-        email: '',
-        logado: false
-    };
-}
+    angular.module('delta.factory')
+        .factory('ParametrosAplicacao', ParametrosAplicacao);
+
+    /* @ngInject */
+    function ParametrosAplicacao(){
+        return {
+            nomeDoUsuario: '',
+            email: '',
+            logado: false
+        };
+    }
+})();

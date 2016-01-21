@@ -30,37 +30,93 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
 
-    <script src="app/js/delta-config.js"></script>
-    <script src="app/js/controller/index-controller3.js"></script>
-    <script src="app/arquitetura/service/alert-service.js"></script>
-    <script src="app/arquitetura/filter/maiusculo.js"></script>
+    <script src="app/js/delta.module.js"></script>
+    <script src="app/js/delta.config.js"></script>
+    <script src="app/js/controller/index.controller3.js"></script>
+    <script src="app/arquitetura/service/alert.service.js"></script>
+    <script src="app/arquitetura/filter/maiusculo.filter.js"></script>
 </head>
 <body ng-app="delta">
 <!-- ddafdsfsa-->
-    <div ng-controller="IndexController3" class="container">
+    <div ng-controller="IndexController3 as vmIndex" class="container">
+
+        <!--<nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" ng-click="vmIndex.dispararEvento()"><a href="#">Dispara evento</a></li>
+                        <li role="presentation"
+                            ng-class="{'active' : vmIndex.menuSelected==='home'}"
+                            ui-sref="home">
+                            <a href="#">HOME</a>
+                        </li>
+
+                        <li role="presentation"
+                            ng-class="{'active' : vmIndex.menuSelected==='menu'}"
+                            ui-sref="menu">
+                            <a href="#">Menu</a>
+                        </li>
+                        <li role="presentation"
+                            ng-class="{'active' : vmIndex.menuSelected==='cadastroPessoa'}"
+                            ui-sref="cadastroPessoa">
+                            <a href="#">Cadastro de Pessoa</a>
+                        </li>
+                        <li role="presentation"
+                            ng-class="{'active' : vmIndex.menuSelected==='pesquisaPessoa'}"
+                            ui-sref="pesquisaPessoa">
+                            <a href="#">Pesquisa de Pessoa</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>-->
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" ng-class="{'active' : vmIndex.menuSelected==='home'}">
+                        <a href="#" ui-sref="home">HOME</a>
+                    </li>
+                    <li role="presentation" ng-class="{'active' : vmIndex.menuSelected==='menu'}">
+                        <a href="#" ui-sref="menu">MENU</a>
+                    </li>
+                    <li role="presentation" ng-class="{'active' : vmIndex.menuSelected==='cadastroPessoa'}">
+                        <a href="#" ui-sref="cadastroPessoa">Cadastro de Pessoa</a>
+                    </li>
+                    <li role="presentation" ng-class="{'active' : vmIndex.menuSelected==='pesquisaPessoa'}">
+                        <a href="#" ui-sref="pesquisaPessoa">Pesquisa de Pessoa</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
         <div>
-            <ul class="nav nav-pills">
+            <!--<ul class="nav nav-pills">
                 <li role="presentation" ng-click="dispararEvento()"><a href="#">Dispara evento</a></li>
                 <li role="presentation"
-                    ng-class="'active':menuSelected=='home'"
+                    ng-class="{'active' : vmIndex.menuSelected==='home'}"
                     ui-sref="home">
                     <a href="#">HOME</a>
                 </li>
+
                 <li role="presentation"
-                    ng-class="'active':menuSelected=='home'"
+                    ng-class="{'active' : vmIndex.menuSelected==='menu'}"
                     ui-sref="menu">
                     <a href="#">Menu</a>
                 </li>
                 <li role="presentation"
-                    ui-sref="cadastroPessoa"
-                    ng-class="'active':menuSelected=='cadastroPessoa'">
+                    ng-class="{'active' : vmIndex.menuSelected==='cadastroPessoa'}"
+                    ui-sref="cadastroPessoa">
                     <a href="#">Cadastro de Pessoa</a>
                 </li>
-                <li role="presentation" ui-sref="pesquisaPessoa"
-                    ng-class="'active':menuSelected=='pesquisaPessoa'">
+                <li role="presentation"
+                    ng-class="{'active' : vmIndex.menuSelected==='pesquisaPessoa'}"
+                    ui-sref="pesquisaPessoa">
                     <a href="#">Pesquisa de Pessoa</a>
                 </li>
-            </ul>
+            </ul>-->
+
+            <!--ng-class="menuSelected=='home' ? 'active':''"-->
 
             <!--<md-toolbar>-->
                 <!--<div class="md-toolbar-tools">-->
