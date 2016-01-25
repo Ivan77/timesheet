@@ -34,50 +34,42 @@
 
     <script src="app/js/delta.module.js"></script>
     <script src="app/js/delta.config.js"></script>
-    <script src="app/js/controller/index.controller3.js"></script>
+    <script src="app/js/controller/index.controller4.js"></script>
     <script src="app/arquitetura/service/alert.service.js"></script>
     <script src="app/arquitetura/filter/maiusculo.filter.js"></script>
+    <script src="app/arquitetura/directive/ca-input-text/ca-input-text.directive.js"></script>
+
+    <script src="app/arquitetura/directive/ca-span/ca-span.directive.js"></script>
+
+    <script src="app/arquitetura/directive/ca-input-text-material/ca-input-text-material.directive.js"></script>
 </head>
 <body ng-app="delta">
 <!-- ddafdsfsa-->
-    <div ng-controller="IndexController3 as vmIndex" class="container">
-
-
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <ul class="nav navbar-nav">
-                    <li role="presentation" ng-class="{'active' : vmIndex.menuSelected==='home'}">
-                        <a href="#" ui-sref="home">HOME</a>
-                    </li>
-                    <!--<li role="presentation" ng-class="{'active' : vmIndex.menuSelected==='menu'}">
-                        <a href="#" ui-sref="menu">MENU</a>
-                    </li>-->
-                    <li role="presentation" ng-class="{'active' : vmIndex.menuSelected==='galeria'}">
-                        <a href="#" ui-sref="galeria">Galeria</a>
-                    </li>
-                    <li role="presentation" ng-class="{'active' : vmIndex.menuSelected==='cadastroPessoa'}">
-                        <a href="#" ui-sref="cadastroPessoa">Cadastro de Pessoa</a>
-                    </li>
-                    <li role="presentation" ng-class="{'active' : vmIndex.menuSelected==='pesquisaPessoa'}">
-                        <a href="#" ui-sref="pesquisaPessoa">Pesquisa de Pessoa</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li class="active">Data</li>
-        </ol>
-
+    <div ng-controller="IndexController4 as vmIndex" class="container">
 
         <div class="panel panel-default">
             <div class="panel-body">
-                <div><div ui-view></div></div>
+
+                <!--<ca-span texto="Ivan Alves de Oliveira"></ca-span>-->
+
+                <div class="row">
+                    <ca-input-text label="Nome"
+                                   colspan="6"
+                                   ng-required="true"
+                                   ng-model="vmIndex.entidade.nome">
+                    </ca-input-text>
+
+                    <ca-input-text label="Sobrenome"
+                                   colspan="6"
+                                   ng-required="true"
+                                   ng-model="vmIndex.entidade.sobrenome">
+                    </ca-input-text>
+                </div>
+
+                {{vmIndex.entidade}}
+
             </div>
         </div>
-        <!--<div><div ui-view></div></div>-->
     </div>
 
 </body>

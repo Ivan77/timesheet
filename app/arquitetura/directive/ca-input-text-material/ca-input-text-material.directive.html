@@ -1,0 +1,23 @@
+<!--<div ng-class="myColspan">
+    <div class="form-group">
+        <label class="control-label">
+            <label ng-bind="label"></label>
+            <label style="color: red" ng-if="ngRequired">
+                <i class="fa fa-asterisk"></i>
+            </label>
+        </label>
+        <input type="text"
+                class="form-control"
+                ng-model="ngModel"
+                ng-required="ngRequired">
+    </div>
+</div>-->
+
+<div ng-class="myColspan">
+    <md-input-container class="md-block" flex-gt-sm>
+        <label ng-bind="labelMod">
+        </label>
+        <input ng-model="ngModel"
+               ng-required="ngRequired">
+    </md-input-container>
+</div>

@@ -93,6 +93,19 @@
                     expand: true,
                     src: 'build/source.css'
                 }
+            },
+            ngdocs: {
+                options: {
+                    dest: 'docs',
+                    title: 'Docs',
+                    html5Mode: false
+                },
+                delta: {
+                    src: [
+                        'app/**/*.js',
+                        'arquitetura/**/*.js'
+                    ]
+                }
             }
         });
 
@@ -105,7 +118,8 @@
                 'autoprefixer',
                 'uglify',
                 'cssmin',
-                'htmlmin'
+                'htmlmin',
+                'ngdocs'
             ]
         );
     };

@@ -36,4 +36,31 @@
             </slide>
         </carousel>
     </div>
+
+    <!--<ul rn-carousel class="image">
+        <li ng-repeat="slide in vm.slides">
+            <div class="layer">
+                {{slide.image}}
+            </div>
+        </li>
+    </ul>-->
+
+
+    <!--<div>
+        <h3>buffered ngRepeat and custom indicators </h3>
+        <div class="details">
+        </div>
+        <div class="carousel-demo">
+            <ul rn-carousel rn-carousel-index="carouselIndex22" rn-carousel-auto-slide rn-carousel-buffered class="carousel2">
+                <li ng-repeat="slide in vm.slides" ng-class="'id-' + slide.id">
+                    <div ng-style="{'background-image': 'url(' + slide.image + ')'}"  class="bgimage">
+                        #{{ slide.id }}
+                    </div>
+                </li>
+            </ul>
+            <div class="rn-carousel-indicator custom-indicator">
+                <span ng-repeat="slide in vm.slides" ng-class="{active: $index==$parent.carouselIndex22}" ng-click="$parent.carouselIndex22 = $index">★</span>
+            </div>
+        </div>
+    </div>-->
 </div>
