@@ -15,6 +15,16 @@
             templateUrl: 'app/views/menu/menu.html'
         };
 
+        var galeria = {
+            url: '/galeria',
+            templateUrl: 'app/views/galeria/galeria.html',
+            resolve: {
+                deps: function($ocLazyLoad){
+                    return $ocLazyLoad.load('app/views/galeria/galeria.controller.js');
+                }
+            }
+        };
+
         var cadastroPessoa = {
             url: '/cadastro-pessoa/:id',
             templateUrl: 'app/views/pessoa/cadastro-pessoa.html',
@@ -37,6 +47,7 @@
 
         $stateProvider.state('home', home);
         $stateProvider.state('menu', menu);
+        $stateProvider.state('galeria', galeria);
 
         $stateProvider.state('cadastroPessoa', cadastroPessoa);
         $stateProvider.state('pesquisaPessoa', pesquisaPessoa);

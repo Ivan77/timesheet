@@ -18,6 +18,7 @@
         'delta.service',
         'delta.factory',
         'delta.directive',
-        'delta.filter'
+        'delta.filter',
+        'ui.bootstrap'
     ]);
 })();
