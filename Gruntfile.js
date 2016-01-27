@@ -106,6 +106,13 @@
                         'arquitetura/**/*.js'
                     ]
                 }
+            },
+            less:{
+                app:{
+                    files:{
+                        'app/style/ca-styles.css':'app/style/ca-styles.less'
+                    }
+                }
             }
         });
 

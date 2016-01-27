@@ -19,25 +19,24 @@
      **/
 
     angular.module('delta.directive')
-        .directive('caInputText', caInputText);
+        .directive('caEnter', caEnter);
 
-    function caInputText(){
+    function caEnter(KeyCode){
         return{
             link: link,
-            restrict: 'E',
-            templateUrl: 'app/arquitetura/directive/ca-input-text/ca-input-text.directive.html',
-            scope:{
-                label: '@',
-                colspan: '@',
-                ngModel: '=?',
-                ngRequired: '=?'
-            }
+            restrict: 'A'
         };
+
         function link(scope, element, attrs){
-            if(!attrs.colspan){
-                attrs.colspan = 3;
+            element.bind('keydown', onKeydown);
+
+            function onKeydown(event){
+                var code = event.keyCode;
+
+                if(code === KeyCode.ENTER){
+                    scope.$eval(attrs.caEnter);
+                }
             }
-            scope.myColspan = 'col-sm-'+attrs.colspan;
         }
     }
 })();
