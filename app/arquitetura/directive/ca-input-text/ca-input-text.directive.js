@@ -24,16 +24,23 @@
     function caInputText(){
         return{
             link: link,
+            require: '^form',
             restrict: 'E',
             templateUrl: 'app/arquitetura/directive/ca-input-text/ca-input-text.directive.html',
             scope:{
                 label: '@',
                 colspan: '@',
                 ngModel: '=?',
-                ngRequired: '=?'
+                ngRequired: '=?',
+                ngMaxlength: '@',
+                ngMinlength: '@',
+                ngFocus: '@'
             }
         };
-        function link(scope, element, attrs){
+        function link(scope, element, attrs, formControl){
+            scope.inputName = 'inputText'+scope.$id; //define nome único para campo de texto
+            scope.formControl = formControl;
+
             if(!attrs.colspan){
                 attrs.colspan = 3;
             }

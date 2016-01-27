@@ -19,7 +19,7 @@
         'delta.factory',
         'delta.directive',
         'delta.filter',
-        'ui.bootstrap',
-        'angular-keycode'
+        'angular-keycode',
+        'ui.bootstrap'
     ]);
 })();

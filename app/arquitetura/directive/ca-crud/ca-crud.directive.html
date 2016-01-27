@@ -1,8 +1,8 @@
 <div class="panel panel-primary">
     <div class="panel-heading" ng-bind="titulo"></div>
     <div class="panel-body">
-        <form name="formPessoa"
-              ng-submit="salvar()"
+        <form name="caFormCrud"
+              ng-submit="onSalvar()"
               novalidate>
 
             <div ng-transclude></div>
@@ -16,13 +16,13 @@
                     </button>
                     <button type="button"
                             class="btn btn-default"
-                            ng-click="limpar()">
+                            ng-click="onLimpar()">
                         <i class="fa fa-eraser"></i>
                         LIMPAR
                     </button>
                     <button type="button"
                             class="btn btn-danger"
-                            ng-click="excluir()">
+                            ng-click="onExcluir()">
                         <i class="fa fa-trash-o"></i>
                         EXCLUIR
                     </button>

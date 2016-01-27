@@ -1,5 +1,6 @@
 <div ng-class="myColspan">
-    <div class="form-group">
+    <div class="form-group"
+         ng-class="{'has-error':formControl[inputName].$invalid && formControl[inputName].$touched}">
         <label class="control-label">
             <label ng-bind="label"></label>
             <label class="ca-input-text-label" ng-if="ngRequired">
@@ -9,6 +10,14 @@
         <input type="text"
                 class="form-control"
                 ng-model="ngModel"
-                ng-required="ngRequired">
+                ng-required="ngRequired"
+                ng-maxlength="{{ngMaxlength}}"
+                ng-minlength="{{ngMinlength}}"
+                name="{{::inputName}}" ng-focus="ngFocus">
+        <div ng-messages="formControl[inputName].$error"
+             class="help-block"
+             ng-if="formControl[inputName].$invalid && formControl[inputName].$touched">
+            <div ng-messages-include="app/arquitetura/templates/messages.html"></div>
+        </div>
     </div>
 </div>
