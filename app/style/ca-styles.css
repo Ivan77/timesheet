@@ -1,3 +1,13 @@
 .ca-input-text-label {
   color: red;
 }
+.btn-clear {
+  position: absolute;
+  right: 18px;
+  top: 35px;
+  height: 24px;
+  margin: auto;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+}

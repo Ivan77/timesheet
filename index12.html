@@ -37,6 +37,7 @@
     <script src="app/arquitetura/service/alert.service.js"></script>
     <script src="app/arquitetura/filter/maiusculo.filter.js"></script>
     <script src="app/arquitetura/directive/ca-input-text/ca-input-text.directive.js"></script>
+    <script src="app/arquitetura/directive/ca-input-text-clean/ca-input-text-clean.directive.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
     <script src="app/arquitetura/directive/ca-span/ca-span.directive.js"></script>
@@ -55,20 +56,22 @@
 
         <ca-crud titulo="Crud" salvar="vmIndex.salvar()" limpar="vmIndex.limpar()" excluir="vmIndex.excluir()">
             <div class="row">
-                <ca-input-text label="Nome"
-                               colspan="6"
-                               ng-required="true"
-                               ng-model="vmIndex.entidade.nome"
-                               ng-minlength="5"
-                               ng-maxlength="20"
-                               show-button-clean="true"
-                               ng-focus="true">
-                </ca-input-text>
-                <ca-input-text label="Sobrenome"
-                               colspan="6"
-                               ng-required="true"
-                               show-button-clean="true"
-                               ng-model="vmIndex.entidade.sobrenome">
+                <ca-input-text-clean
+                        label="Nome"
+                        colspan="6"
+                        ng-required="true"
+                        model="vmIndex.entidade.nome"
+                        ng-minlength="5"
+                        ng-maxlength="20"
+                        show-button-clean="true"
+                        ng-focus="true">
+                </ca-input-text-clean>
+                <ca-input-text-clean
+                        label="Sobrenome"
+                        colspan="6"
+                        ng-required="true"
+                        show-button-clean="true"
+                        ng-model="vmIndex.entidade.sobrenome">
             </div>
         </ca-crud>
 

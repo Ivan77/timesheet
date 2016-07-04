@@ -20,14 +20,14 @@
      **/
 
     angular.module('delta.directive')
-        .directive('caInputText', caInputText);
+        .directive('caInputTextClean', caInputTextClean);
 
-    function caInputText(){
+    function caInputTextClean(){
         return{
             link: link,
             require: '^form',
             restrict: 'E',
-            templateUrl: 'app/arquitetura/directive/ca-input-text/ca-input-text-clean.directive.html',
+            templateUrl: 'app/arquitetura/directive/ca-input-text-clean/ca-input-text-clean.directive.html',
             scope:{
                 label: '@',
                 colspan: '@',
@@ -44,6 +44,8 @@
             scope.inputName = 'inputText'+scope.$id; //define nome único para campo de texto
             scope.formControl = formControl;
 
+            scope.isCleanEnabled = attrs.showButtonClean;
+
             if(!attrs.colspan){
                 attrs.colspan = 3;
             }
@@ -53,15 +55,14 @@
                 scope.ngModel = "";
             }
 
-            /*scope.$watch("ngModel", function(newValue,oldValue){
-                var btnClean = element.find("span");
+            scope.$watch("ngModel", function(newValue,oldValue){
                 if(scope.showButtonClean == true && newValue != undefined && newValue.length > 0){
-                    $(btnClean).show();
+                    scope.isCleanEnabled = true;
                 }else{
-                    $(btnClean).hide();
+                    scope.isCleanEnabled = false;
                 }
                 console.log(oldValue+" -> "+newValue);
-            });*/
+            });
         }
     }
 })();
