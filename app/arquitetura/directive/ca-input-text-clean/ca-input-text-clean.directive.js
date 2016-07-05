@@ -40,6 +40,7 @@
             },
             replace: true
         };
+        
         function link(scope, element, attrs, formControl){
             scope.inputName = 'inputText'+scope.$id; //define nome único para campo de texto
             scope.formControl = formControl;
@@ -55,7 +56,12 @@
                 scope.ngModel = "";
             }
 
-            scope.$watch("ngModel", function(newValue,oldValue){
+            /*ngModel.$render = function () {
+                var newValue = ngModel.$viewValue;
+                console.log(newValue)
+            };*/
+
+            attrs.$watch("ngModel", function(newValue,oldValue){
                 if(scope.showButtonClean == true && newValue != undefined && newValue.length > 0){
                     scope.isCleanEnabled = true;
                 }else{
